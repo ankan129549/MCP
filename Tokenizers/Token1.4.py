@@ -1,0 +1,118 @@
+import tiktoken
+import numpy as np
+import pandas as pd
+from transformers import AutoTokenizer # Import AutoTokenizer for HuggingFace models
+
+# --- Part 1: Tokenization Across Models and Languages ---
+
+# Define the texts for each language as provided in the PDF
+texts = {
+    "English": "The cat sat on the windowsill, watching the rain fall. Suddenly, a flash of lightning lit up the sky, startling the little creature. It leaped down and scurried to its favorite hiding spot under the bed.",
+    "Spanish": "El gato estaba sentado en el alféizar de la ventana, mirando la lluvia caer. De repente, un relámpago iluminó el cielo, sobresaltando a la pequeña criatura. Saltó y corrió a su escondite favorito debajo de la cama.",
+    "Arabic": "جلست القطة على حافة النافذة، تراقب هطول المطر. وفجأة، أضاءت ومضة من البرق السماء، مما . أثار ذهول المخلوق الصغير. قفزت إلى أسفل وهرعت إلى مكان اختبائها المفضل تحت السرير",
+    "Hindi": "बिल्ली खिड़की पर बैठी हुई बारिश को देख रही थी। अचानक, आसमान में बिजली चमकी, जिससे छोटा जीव चौंक गया। वह नीचे कूद गई और बिस्तर के नीचे अपनी पसंदीदा छिपने की जगह पर भाग गई।"
+}
+
+models = {
+    "GPT-3.5-Turbo": "cl100k_base",
+    "GPT-4": "cl100k_base",
+    "GPT-4o": "o200k_base",
+    "Llama 3.1": "meta-llama/Llama-3.1-8B-Instruct" # Placeholder for Llama tokenizer path
+}
+
+# Dictionary to store token counts
+token_counts = {}
+
+print("Calculating token counts...\n")
+
+for lang, text in texts.items():
+    token_counts[lang] = {}
+    for model_name, encoding_info in models.items():
+        try:
+            num_tokens = 0
+            if model_name in ["GPT-3.5-Turbo", "GPT-4", "GPT-4o"]:
+                encoding = tiktoken.get_encoding(encoding_info)
+                tokens = encoding.encode(text)
+                num_tokens = len(tokens)
+            elif model_name == "Llama 3.1":
+           
+                try:
+                   
+                    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct") 
+                    tokens = tokenizer.encode(text)
+                    num_tokens = len(tokens)
+                except Exception as llama_e:
+                    token_counts[lang][model_name] = f"Error loading/using Llama tokenizer: {llama_e}. Ensure 'transformers' is installed and Llama tokenizer is downloaded to the correct path."
+                    print(f"Error for {lang} with {model_name}: {llama_e}")
+                    continue # Skip to next iteration if Llama tokenizer fails
+
+            token_counts[lang][model_name] = num_tokens
+            print(f"Language: {lang}, Model: {model_name}, Tokens: {num_tokens}")
+        except Exception as e:
+            token_counts[lang][model_name] = f"Error: {e}"
+            print(f"Error for {lang} with {model_name}: {e}")
+
+print("\nToken count calculation complete.")
+
+# --- Part 2: Positional Embeddings ---
+
+def get_sinusoidal_positional_embeddings(sequence_length: int, d_model: int) -> np.ndarray:
+    """
+    Generates sinusoidal positional embeddings.
+
+    Args:
+        sequence_length (int): The maximum length of the sequence (number of tokens).
+        d_model (int): The dimension of the embedding space.
+
+    Returns:
+        np.ndarray: A numpy array of shape (sequence_length, d_model)
+                    containing the positional embeddings.
+    """
+    # Initialize a matrix for positional encodings with zeros
+    positional_embeddings = np.zeros((sequence_length, d_model))
+
+    # Create a position vector (0, 1, 2, ..., sequence_length-1)
+    position = np.arange(sequence_length)[:, np.newaxis]
+
+    # Calculate the division term for the sinusoidal functions
+    # This term decreases with increasing dimension index (i)
+    div_term = np.exp(np.arange(0, d_model, 2) * -(np.log(10000.0) / d_model))
+
+    # Apply sine to even indices in the embedding dimension
+    positional_embeddings[:, 0::2] = np.sin(position * div_term)
+
+    # Apply cosine to odd indices in the embedding dimension
+    positional_embeddings[:, 1::2] = np.cos(position * div_term)
+
+    return positional_embeddings
+
+print("\n--- Positional Embeddings Generation for Each Language ---")
+
+# Define a common embedding dimension (d_model) for demonstration
+# This is a hyperparameter of the LLM and can vary.
+embedding_dimension = 512
+
+# Dictionary to store generated positional embeddings
+generated_pos_embeddings = {}
+
+# We'll generate positional embeddings based on the token count from GPT-4o
+# or Llama if GPT-4o is not available/failed.
+# In a real scenario, you would choose the model's token count that is relevant
+# to the positional encoding you are interested in.
+for lang, models_data in token_counts.items():
+    # Prioritize Llama token count if available, otherwise fall back to GPT-4o
+    sequence_length = models_data.get("Llama 3.1")
+    if not isinstance(sequence_length, int): # If Llama failed or not an int, try GPT-4o
+        sequence_length = models_data.get("GPT-4o")
+
+    if isinstance(sequence_length, int) and sequence_length > 0: # Ensure it's an integer and positive
+        print(f"\nGenerating positional embeddings for {lang} (Sequence Length: {sequence_length}, Embedding Dimension: {embedding_dimension})...")
+        pos_embeddings = get_sinusoidal_positional_embeddings(sequence_length, embedding_dimension)
+        generated_pos_embeddings[lang] = pos_embeddings
+        print(f"Shape of positional embeddings for {lang}: {pos_embeddings.shape}")
+        # Optionally print a small sample
+        print(f"First 3 positions, first 5 dimensions for {lang}:\n{pos_embeddings[:3, :5]}")
+    else:
+        print(f"\nCould not generate positional embeddings for {lang} due to tokenization error or zero sequence length.")
+
+
