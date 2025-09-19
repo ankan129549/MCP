@@ -13,7 +13,7 @@ from typing import Literal
 
 #model = ChatOpenAI()
 
-API_KEY = "dial-mqjekw9tuhcrugvqhko5yfju5t8" 
+API_KEY = "" 
 AZURE_ENDPOINT = "https://ai-proxy.lab.epam.com"
 API_VERSION = "2024-02-01"
 DEPLOYMENT_NAME = "gpt-4o"
@@ -68,5 +68,6 @@ branch_chain = RunnableBranch(
 chain = classifier_chain | branch_chain
 
 print(chain.invoke({'feedback': 'This is a beautiful phone'}))
+
 
 chain.get_graph().print_ascii()
