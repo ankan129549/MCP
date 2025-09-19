@@ -1,0 +1,10 @@
+{
+    "page_content": "our internal held-out dataset, which uses author-generated sources instead of web-based information.Gemini can also be used as the engine for more advanced coding systems. Two years ago we presented AlphaCode, the first AI code generation system to reach a competitive level of performance in programming competitions.Using a specialized version of Gemini, we created a more advanced code generation system, AlphaCode 2, which excels at solving competitive programming problems that go beyond coding to involve complex math and theoretical computer science. When evaluated on the same platform as the original AlphaCode, AlphaCode 2 shows massive improvements, solving nearly twice as many problems, and we estimate that it performs better than 85% of competition participants — up from nearly 50% for AlphaCode. When programmers collaborate with AlphaCode 2 by defining certain properties for the code samples to follow, it performs even better.We’re excited for programmers to increasingly use",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 16
+    }
+}

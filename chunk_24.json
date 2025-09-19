@@ -1,0 +1,10 @@
+{
+    "page_content": "safety, privacy and data governance and compliance.Android developers will also be able to build with Gemini Nano, our most efficient model for on-device tasks, via AICore, a new system capability available in Android 14, starting on Pixel 8 Pro devices. Sign up for an early preview of AICore.Gemini Ultra coming soonFor Gemini Ultra, we’re currently completing extensive trust and safety checks, including red-teaming by trusted external parties, and further refining the model using fine-tuning and reinforcement learning from human feedback (RLHF) before making it broadly available.As part of this process, we’ll make Gemini Ultra available to select customers, developers, partners and safety and responsibility experts for early experimentation and feedback before rolling it out to developers and enterprise customers early next year.Early next year, we’ll also launch Bard Advanced, a new, cutting-edge AI experience that gives you access to our best models and capabilities, starting with",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 24
+    }
+}

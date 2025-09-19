@@ -1,0 +1,10 @@
+{
+    "page_content": "we’re working with a diverse group of external experts and partners to stress-test our models across a range of issues.To diagnose content safety issues during Gemini’s training phases and ensure its output follows our policies, we’re using benchmarks such as Real Toxicity Prompts, a set of 100,000 prompts with varying degrees of toxicity pulled from the web, developed by experts at the Allen Institute for AI. Further details on this work are coming soon.To limit harm, we built dedicated safety classifiers to identify, label and sort out content involving violence or negative stereotypes, for example. Combined with robust filters, this layered approach is designed to make Gemini safer and more inclusive for everyone. Additionally, we’re continuing to address known challenges for models such as factuality, grounding, attribution and corroboration.Responsibility and safety will always be central to the development and deployment of our models. This is a long-term commitment that",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 20
+    }
+}
