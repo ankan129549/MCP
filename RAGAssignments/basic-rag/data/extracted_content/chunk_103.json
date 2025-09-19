@@ -1,0 +1,10 @@
+{
+    "page_content": "months, Gemini will be available in more of our products and services like Search, Ads, Chrome and Duet AI.We’re already starting to experiment with Gemini in Search, where it's making our Search Generative Experience (SGE) faster for users, with a 40% reduction in latency in English in the U.S., alongside improvements in quality.Building with GeminiStarting on December 13, developers and enterprise customers can access Gemini Pro via the Gemini API in Google AI Studio or Google Cloud Vertex AI.Google AI Studio is a free, web-based developer tool to prototype and launch apps quickly with an API key. When it's time for a fully-managed AI platform, Vertex AI allows customization of Gemini with full data control and benefits from additional Google Cloud features for enterprise security, safety, privacy and data governance and compliance.Android developers will also be able to build with Gemini Nano, our most efficient model for on-device tasks, via AICore, a new system capability",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 103
+    }
+}

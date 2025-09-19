@@ -1,0 +1,10 @@
+{
+    "page_content": "model for highly complex tasks.Gemini Pro — our best model for scaling across a wide range of tasks.Gemini Nano — our most efficient model for on-device tasks. State-of-the-art performanceWe've been rigorously testing our Gemini models and evaluating their performance on a wide variety of tasks. From natural image, audio and video understanding to mathematical reasoning, Gemini Ultra’s performance exceeds current state-of-the-art results on 30 of the 32 widely-used academic benchmarks used in large language model (LLM) research and development.With a score of 90.0%, Gemini Ultra is the first model to outperform human experts on MMLU (massive multitask language understanding), which uses a combination of 57 subjects such as math, physics, history, law, medicine and ethics for testing both world knowledge and problem-solving abilities.Our new benchmark approach to MMLU enables Gemini to use its reasoning capabilities to think more carefully before answering difficult questions, leading",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 11
+    }
+}

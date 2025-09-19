@@ -1,0 +1,10 @@
+{
+    "page_content": "such as factuality, grounding, attribution and corroboration.Responsibility and safety will always be central to the development and deployment of our models. This is a long-term commitment that requires building collaboratively, so we’re partnering with the industry and broader ecosystem on defining best practices and setting safety and security benchmarks through organizations like MLCommons, the Frontier Model Forum and its AI Safety Fund, and our Secure AI Framework (SAIF), which was designed to help mitigate security risks specific to AI systems across the public and private sectors. We’ll continue partnering with researchers, governments and civil society groups around the world as we develop Gemini. Making Gemini available to the worldGemini 1.0 is now rolling out across a range of products and platforms:Gemini Pro in Google productsWe’re bringing Gemini to billions of people through Google products.Starting today, Bard will use a fine-tuned version of Gemini Pro for more",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 21
+    }
+}

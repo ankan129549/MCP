@@ -1,0 +1,10 @@
+{
+    "page_content": "at the coreAt Google, we’re committed to advancing bold and responsible AI in everything we do. Building upon Google’s AI Principles and the robust safety policies across our products, we’re adding new protections to account for Gemini’s multimodal capabilities. At each stage of development, we’re considering potential risks and working to test and mitigate them.Gemini has the most comprehensive safety evaluations of any Google AI model to date, including for bias and toxicity. We’ve conducted novel research into potential risk areas like cyber-offense, persuasion and autonomy, and have applied Google Research’s best-in-class adversarial testing techniques to help identify critical safety issues in advance of Gemini’s deployment.To identify blindspots in our internal evaluation approach, we’re working with a diverse group of external experts and partners to stress-test our models across a range of issues.To diagnose content safety issues during Gemini’s training phases and ensure its",
+    "metadata": {
+        "source": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Introducing Gemini: Google’s most capable AI model yet",
+        "description": "Gemini is our most capable and general model, built to be multimodal and optimized for three different sizes: Ultra, Pro and Nano.",
+        "language": "en-us",
+        "chunk_number": 19
+    }
+}
