@@ -23,7 +23,7 @@ print(prompt)
 
 # --- Configuration ---
 
-API_KEY = "dial-mqjekw9tuhcrugvqhko5yfju5t8" 
+API_KEY = "" 
 AZURE_ENDPOINT = "https://ai-proxy.lab.epam.com"
 API_VERSION = "2024-02-01"
 DEPLOYMENT_NAME = "gpt-4"
@@ -48,6 +48,7 @@ try:
 
 except Exception as e:
     print(f"🔥 Error during model initialization or invocation: {e}")
+
 
 
 
