@@ -12,7 +12,7 @@ from langchain_openai import AzureOpenAIEmbeddings
 
 # --- Configuration ---
 
-API_KEY = "dial-mqjekw9tuhcrugvqhko5yfju5t8"
+API_KEY = ""
 AZURE_ENDPOINT = "https://ai-proxy.lab.epam.com"
 API_VERSION = "2024-02-01"
 
