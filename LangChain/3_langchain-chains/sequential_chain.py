@@ -16,7 +16,7 @@ prompt2 = PromptTemplate(
     input_variables=['text']
 )
 #--Configure the Model ---
-API_KEY = "dial-mqjekw9tuhcrugvqhko5yfju5t8" 
+API_KEY = "" 
 AZURE_ENDPOINT = "https://ai-proxy.lab.epam.com"
 API_VERSION = "2024-02-01"
 DEPLOYMENT_NAME = "gpt-4o"
@@ -44,5 +44,6 @@ chain = prompt1 | model | parser | prompt2 | model | parser
 result = chain.invoke({'topic': 'Unemployment in India'})
 
 print(result)
+
 
 chain.get_graph().print_ascii()
