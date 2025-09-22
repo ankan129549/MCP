@@ -33,7 +33,7 @@ def count_hf_tokens(text: str, model_path: str) -> int:
     torch_dtype=torch.bfloat16, # Or torch.float16 if bfloat16 is not supported
     device_map="auto"
 )
-    tokenizer = AutoTokenizer.from_pretrained(model_path, token="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")
+    tokenizer = AutoTokenizer.from_pretrained(model_path, token="")
     #generator = pipeline(
      #   "text-generation",
       #  model=model,
